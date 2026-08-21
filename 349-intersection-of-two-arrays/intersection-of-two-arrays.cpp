@@ -1,0 +1,19 @@
+
+        //each element in the intersection must be unique so i will use set 
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        unordered_set<int> set1(nums1.begin(), nums1.end());
+        vector<int> result;
+
+        for (int num : nums2) {
+            if (set1.erase(num)) { // Returns 1 if found and removes it
+                result.push_back(num);
+            }
+        }
+
+        return result;
+    }
+};
+        
+ 
