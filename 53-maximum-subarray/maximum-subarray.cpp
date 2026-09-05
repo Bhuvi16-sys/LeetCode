@@ -7,8 +7,8 @@ public:
 
         for (int x : nums) {
             current_prefix += x;
-            max_sum = std::max(max_sum, current_prefix - min_prefix);
-            min_prefix = std::min(min_prefix, current_prefix);
+            max_sum = max(max_sum, current_prefix - min_prefix);
+            min_prefix = min(min_prefix, current_prefix);
         }
 
         return max_sum;
